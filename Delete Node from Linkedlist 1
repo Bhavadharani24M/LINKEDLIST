@@ -1,0 +1,66 @@
+Given a singly linked list of integers and position 'i', delete the node present at the 'i-th' position in the linked list. Note : Assume that the Indexing for the linked list always starts from 0.
+import java.io.*;
+import java.util.*;
+class Node
+{
+    int data;
+    Node next;
+    Node(int val)
+    {
+        data=val;
+        next=null;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc= new Scanner(System.in);
+        String []a=sc.nextLine().split(" ");
+        int n=a.length;
+        int s=sc.nextInt();
+        int e=0;
+        Node head=null,temp=null;
+        for(int i=0;i<n;i++)
+        {
+            int value=Integer.valueOf(a[i]);  
+            if(i==s) e=value; 
+            Node nn= new Node(value);
+            if(value==-1) break;
+            if(head==null)
+            {
+                head=nn;
+                temp=nn;
+                
+            }
+            else{
+               temp.next=nn;
+               temp=nn;
+               
+                
+            }}
+            temp=head;
+            while(temp!=null && temp.next!=null)
+            {
+                if(temp.data==e) {
+                    temp=temp.next;
+                    head=temp;
+                }
+                if(temp.next.data==e)
+                {
+                    temp.next=temp.next.next;
+                    
+                }
+                temp=temp.next;
+            }
+            Node tr=head;
+            while(tr!=null)
+            {
+                System.out.print(tr.data+" ");
+                tr=tr.next;
+            }
+            
+           
+    }
+}
