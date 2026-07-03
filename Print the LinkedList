@@ -1,0 +1,50 @@
+Print the LinkedList
+ANSWER
+import java.io.*;
+import java.util.*;
+class Node
+{
+    int data;
+    Node next;
+    Node(int val)
+    {
+        data=val;
+        next=null;
+    }
+}
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc= new Scanner(System.in);
+        String []a=sc.nextLine().split(" ");
+        int n=a.length;
+        Node temp=null,head=null;
+        for(int i=0;i<n;i++)
+        {
+            int value=Integer.valueOf(a[i]);
+            Node nn= new Node(value);
+            if(value==-1) break;
+            if(head==null)
+            {
+                head=nn;
+                temp=nn;
+            }
+            else{
+                temp.next=nn;
+                temp=nn;
+                
+            }}
+            Node tr=head;
+            while(tr!=null)
+            {
+                System.out.print(tr.data+" ");
+                tr=tr.next;
+            }
+            
+        
+        
+    }
+}
+
